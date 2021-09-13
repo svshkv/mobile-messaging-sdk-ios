@@ -100,6 +100,7 @@ class NotificationsInteractionService: MobileMessagingService {
 		presentingVc.present(webViewController, animated: true, completion: nil)
 	}
 
+    @available(iOSApplicationExtension, unavailable)
 	fileprivate func handleNotificationTap(message: MM_MTMessage, completion: @escaping () -> Void) {
 		DispatchQueue.main.async {
             let delegate = MobileMessaging.messageHandlingDelegate

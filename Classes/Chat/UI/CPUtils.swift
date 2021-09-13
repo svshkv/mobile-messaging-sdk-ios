@@ -234,10 +234,12 @@ extension UIView {
 	}
 }
 
+@available(iOSApplicationExtension, unavailable)
 func showAlertInRootVC(_ error: NSError) {
 	UIApplication.shared.keyWindow!.rootViewController?.showAlert(error)
 }
 
+@available(iOSApplicationExtension, unavailable)
 func showAlertInRootVC(_ title: String, message: String) {
 	UIApplication.shared.keyWindow!.rootViewController?.showAlert(title, message: message)
 }

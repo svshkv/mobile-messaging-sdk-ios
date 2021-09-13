@@ -163,6 +163,7 @@ extension MMChatViewController: ChatAttachmentPickerDelegate {
         webView.sendMessage(attachment: attachment)
     }
     
+    @available(iOSApplicationExtension, unavailable)
     func permissionNotGranted(permissionKeys: [String]?) {
         guard let permissionKeys = permissionKeys else {
             return
@@ -201,6 +202,7 @@ extension MMChatViewController: ChatAttachmentPickerDelegate {
     private var maxUploadAttachmentSize: UInt { return chatWidget?.maxUploadContentSize ?? ChatAttachmentUtils.DefaultMaxAttachmentSize}
 }
 
+@available(iOSApplicationExtension, unavailable)
 extension MMChatViewController: WKNavigationDelegate {
 	public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
 		guard navigationAction.navigationType == .linkActivated, let url = navigationAction.request.url, UIApplication.shared.canOpenURL(url) else {
