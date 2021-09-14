@@ -619,13 +619,12 @@ extension MMApplication {
 	}
 }
 
-
+@available(iOSApplicationExtension, unavailable)
 class MainThreadedUIApplication: MMApplication {
 	init() {
 		
 	}
 
-    @available(iOSApplicationExtension, unavailable)
 	var app: UIApplication = UIApplication.shared
 
 	var applicationIconBadgeNumber: Int {

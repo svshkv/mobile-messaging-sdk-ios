@@ -81,6 +81,7 @@ extension UIActivityIndicatorView: MMActivityIndicatorProtocol {
 
 }
 
+@available(iOSApplicationExtension, unavailable)
 public class MMWebViewControllerBase: UIViewController, WebViewToolbarDelegate, WKNavigationDelegate {
 	let url: String
 	var customTitle: String? {
@@ -169,7 +170,6 @@ public class MMWebViewControllerBase: UIViewController, WebViewToolbarDelegate, 
 		displayActivityIndicator(false)
 	}
 	
-    @available(iOSApplicationExtension, unavailable)
 	public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
 		if let url = navigationAction.request.url, url.scheme != "http", url.scheme != "https", UIApplication.shared.canOpenURL(url) {
 			webView.stopLoading()
